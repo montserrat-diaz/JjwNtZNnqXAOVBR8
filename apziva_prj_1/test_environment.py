@@ -23,3 +23,18 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+    # Load data set
+    data = load_data("happinesssurvey3.1.csv")
+
+    # Preprocess data
+    X_train, X_test, y_train, y_test = preprocess_data(data)
+
+    # Create the classifier
+    classifier = create_classifier(n_estimators=10, max_depth=2)
+
+    # Train the model
+    train_model(classifier, X_train, y_train)
+
+    # Prediction on the test set
+    y_pred = predict_model(classifier, X_test)
