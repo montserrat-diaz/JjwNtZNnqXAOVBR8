@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
 def predict_model(classifier, X_test):
