@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score
+from build_features import X_test
 
 def predict_model(classifier, X_test):
     y_pred = classifier.predict(X_test)
