@@ -1,3 +1,4 @@
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
 def create_classifier(n_estimators=10, max_depth=2):
