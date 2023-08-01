@@ -1,4 +1,8 @@
 import sys
+import warnings
+
+warnings.filterwarnings("ignore")
+np.random.seed(42)
 
 REQUIRED_PYTHON = "python3"
 
