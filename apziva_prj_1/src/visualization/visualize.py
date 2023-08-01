@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 from upload_data import data
+from predict_model import y_pred
 
 def plot_actual_vs_predicted(y_true, y_pred):
     """Plot the difference between actual and predicted values using Seaborn."""
