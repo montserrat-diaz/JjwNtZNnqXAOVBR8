@@ -1,0 +1,2 @@
+From [Free Code Camp](https://www.freecodecamp.org/news/how-to-use-the-tree-based-algorithm-for-machine-learning/#:~:text=The%20random%20forest%20algorithm%20works%20by%20completing%20the,most%20voted%20prediction%20result%20as%20the%20final%20prediction.)
+From [Data Camp](https://www.datacamp.com/tutorial/random-forests-classifier-python)
