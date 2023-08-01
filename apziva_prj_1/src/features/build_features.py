@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from upload_data import data
 
 def preprocess_data(data):
     X = data.drop(["Y"], axis=1)
