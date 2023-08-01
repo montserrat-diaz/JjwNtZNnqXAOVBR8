@@ -42,3 +42,5 @@ if __name__ == '__main__':
 
     # Prediction on the test set
     y_pred = predict_model(classifier, X_test)
+
+    plot_actual_vs_predicted(data["Y"], y_pred)
