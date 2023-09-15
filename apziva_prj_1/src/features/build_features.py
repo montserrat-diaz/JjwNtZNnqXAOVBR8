@@ -1,19 +1,24 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from upload_data import data
+from read_data import data
 
-def preprocess_data(data):
-    X = data.drop(["Y"], axis=1)
-    y = data["Y"]
+def preprocess_data(data, target):
+  unknown_replacement = np.nan
+  data.replace("unknown", unknown_replacement, inplace=True)
 
-    # standardize the dataset
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
+  columns_to_fill=["job", "education"]
+  for column in columns_to_fill:
+    mode_value = data[column].mode().iloc[0]
+    data[column].fillna(mode_value, inplace=True)
 
-    # split into train and test set
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_scaled, y, stratify=y, test_size=0.25, random_state=42
-    )
+  data = data.drop(["contact"], axis=1)
+    
+  encoded_data = pd.get_dummies(data, columns = ['job', 'marital', 'education', 'default', 'housing', 'loan', 'month'])
 
-    return X_train, X_test, y_train, y_test
+  # mapping dictionary for encoding 'yes' and 'no' to 1 and 0
+  mapping = {'yes': 1, 'no': 0}
+  features_to_encode = ['y']
+  encoded_data[features_to_encode] = encoded_data[features_to_encode].replace(mapping)
+
+  return encoded_data
